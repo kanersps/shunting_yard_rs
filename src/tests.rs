@@ -12,6 +12,12 @@ mod test {
         run_test("((100 + 1) * 2) + 500 + (300 * 2 / 15) * 10", 1102);
     }
 
+    #[test]
+    fn precedence() {
+        run_test("3 * 2 + 1", 7);
+        run_test("1 + 2 * 3", 7);
+    }
+
     fn run_test(input: &str, expected: i32) {
         let mut algorithm = Algorithm::default();
 
